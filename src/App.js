@@ -5,7 +5,7 @@ export function App() {
   return (
     <div className="App">
       <header className="App-header">Hello my first React</header>
-      <Message mes="words words words" />
+      <Message mes="words words words words" />
     </div>
   );
 }
