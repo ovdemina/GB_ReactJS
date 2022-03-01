@@ -1,7 +1,6 @@
 .App {
   text-align: center;
 }
-
 .App-header {
   background-color: oldlace;
   min-height: 55vh;
@@ -12,7 +11,6 @@
   font-size: 30px;
   color: red;
 }
-
 .Mes {
   background-color: rgb(250, 220, 165);
   min-height: 40vh;
