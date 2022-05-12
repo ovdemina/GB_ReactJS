@@ -18,11 +18,13 @@ export function App() {
 
   const addMessage = (e) => {
     e.preventDefault();
+    let randomId = Math.random();
     setMessages([
       ...messages,
       {
         author: author,
         text: text,
+        id: randomId,
       },
     ]);
     setAuthor("");
@@ -47,7 +49,7 @@ export function App() {
       <h2 className="messageList">Message List: </h2>
 
       {messages.map((message) => (
-        <div className="chat">
+        <div className="chat" key={message.id}>
           <div className="author">{message.author}</div>
           <div className="text">{message.text}</div>
         </div>
