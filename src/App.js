@@ -30,17 +30,11 @@ export function App() {
   };
 
   useEffect(() => {
-    const botMessage = "Your message has been published";
-    const lastMessage = messages[messages.length - 1];
-
-    if (lastMessage !== undefined) {
-      if (lastMessage.text !== botMessage) {
-        setTimeout(() => {
-          setMessages([...messages, { author: "bot", text: botMessage }]);
-        }, 1000);
-
-        console.log("lastmessage = " + lastMessage);
-      }
+    //const botMessage = "Your message has been published";
+    if (messages[0]) {
+      setTimeout(() => {
+        alert("Your message has been published");
+      }, 1500);
     }
   }, [messages]);
 
