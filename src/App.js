@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./App.css";
+import { TextField } from "@mui/material";
+import { Button } from "@mui/material";
 import { Message } from "./Message";
+import { InsetList } from "./chats.js";
 
 export function App() {
   console.log("update");
   const [author, setAuthor] = useState("");
   const [text, setText] = useState("");
   const [messages, setMessages] = useState([]);
+  const ref = useRef(null);
 
   const addAuthor = (e) => {
     setAuthor(e);
@@ -27,12 +31,12 @@ export function App() {
         id: randomId,
       },
     ]);
-    setAuthor("");
+    // setAuthor("");
     setText("");
+    ref.current.focus();
   };
 
   useEffect(() => {
-    //const botMessage = "Your message has been published";
     if (messages[0]) {
       setTimeout(() => {
         alert("Your message has been published");
@@ -46,40 +50,59 @@ export function App() {
         <header className="title">Reactboard Messenger</header>
         <Message mes="Welcome to the new messenger!" />
       </div>
-      <h2 className="messageList">Message List: </h2>
+      <div className="board">
+        <InsetList />
+        <div className="messages">
+          <h2 className="messageList">Message List: </h2>
+          {messages.map((message) => (
+            <div className="chat" key={message.id}>
+              <div className="author">{message.author}</div>
+              <div className="text">{message.text}</div>
+            </div>
+          ))}
 
-      {messages.map((message) => (
-        <div className="chat" key={message.id}>
-          <div className="author">{message.author}</div>
-          <div className="text">{message.text}</div>
-        </div>
-      ))}
-
-      <form>
-        <label className="label">
-          Author:
-          <input
+          <form>
+            <div className="label">
+              <TextField
+                className="input inputAuthor"
+                label="Author"
+                value={author}
+                onChange={(e) => addAuthor(e.target.value)}
+                inputRef={ref}
+              />
+              {/* <input
             className="input inputAuthor"
             type="text"
             value={author}
             onChange={(e) => addAuthor(e.target.value)}
             placeholder="Ivan"
-          />
-        </label>
-        <label className="label">
-          Message:
-          <textarea
+          /> */}
+            </div>
+            <div className="label">
+              <TextField
+                className="input inputAuthor"
+                label="Message"
+                value={text}
+                onChange={(e) => addText(e.target.value)}
+                inputRef={ref}
+              />
+              {/* <textarea
             rows="3"
             className="input inputText"
             value={text}
             onChange={(e) => addText(e.target.value)}
             placeholder="Hello!"
-          />
-        </label>
-        <button className="button" onClick={addMessage}>
+          /> */}
+            </div>
+            <Button variant="contained" onClick={addMessage}>
+              add Message
+            </Button>
+            {/* <button className="button" onClick={addMessage}>
           add Message
-        </button>
-      </form>
+        </button> */}
+          </form>
+        </div>
+      </div>
     </div>
   );
 }
