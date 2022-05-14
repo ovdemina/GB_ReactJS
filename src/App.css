@@ -27,10 +27,9 @@
   padding-top: 40px;
 }
 .messageList {
-  text-align: left;
+  text-align: center;
   padding: 20px 40px;
-  font-size: 30px;
-  background-color: #e1ccb9;
+  font-size: 20px;
   color: #6f9089;
 }
 .chat{
@@ -51,7 +50,7 @@
 .button{
   padding: 20px 60px;
   color: #b88c81;
-  font-size: 30px;
+  font-size: 20px;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   background-color: #a5b8e7;
   border: 2px solid #b4644d;
@@ -77,4 +76,10 @@
 .inputText{
   width: 50%;
   resize: none;
+}
+.board{
+  display: flex;
+}
+.messages{
+  width: 100%;
 }
