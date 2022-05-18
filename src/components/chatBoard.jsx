@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import "./app.css";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
-import { Chats } from "../pages/chats.jsx";
+
 
 export function ChatBoard() {
   console.log("update");
@@ -44,9 +44,6 @@ export function ChatBoard() {
   }, [messages]);
 
   return (
-    
-      <div className="board">
-        <Chats />
         <div className="messages">
           <h2 className="messageList">Message List: </h2>
           {messages.map((message) => (
@@ -80,6 +77,5 @@ export function ChatBoard() {
             </Button>
           </form>
         </div>
-      </div>
   );
 }
