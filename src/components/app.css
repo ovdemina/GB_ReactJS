@@ -83,3 +83,11 @@
 .messages{
   width: 100%;
 }
+.home{
+  display: flex;
+  justify-content: space-around;
+  text-decoration: none;
+  padding: 20px 0px;
+  font-size: 30px;
+  font-weight: 600;
+}
