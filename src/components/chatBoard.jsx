@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
-import "./App.css";
+import "./app.css";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
-import { Message } from "./Message";
-import { InsetList } from "./chats.js";
+import { Chats } from "../pages/chats.jsx";
 
-export function App() {
+export function ChatBoard() {
   console.log("update");
   const [author, setAuthor] = useState("");
   const [text, setText] = useState("");
@@ -45,13 +44,9 @@ export function App() {
   }, [messages]);
 
   return (
-    <div className="app">
-      <div className="app-header">
-        <header className="title">Reactboard Messenger</header>
-        <Message mes="Welcome to the new messenger!" />
-      </div>
+    
       <div className="board">
-        <InsetList />
+        <Chats />
         <div className="messages">
           <h2 className="messageList">Message List: </h2>
           {messages.map((message) => (
@@ -70,13 +65,6 @@ export function App() {
                 onChange={(e) => addAuthor(e.target.value)}
                 inputRef={ref}
               />
-              {/* <input
-            className="input inputAuthor"
-            type="text"
-            value={author}
-            onChange={(e) => addAuthor(e.target.value)}
-            placeholder="Ivan"
-          /> */}
             </div>
             <div className="label">
               <TextField
@@ -86,23 +74,12 @@ export function App() {
                 onChange={(e) => addText(e.target.value)}
                 inputRef={ref}
               />
-              {/* <textarea
-            rows="3"
-            className="input inputText"
-            value={text}
-            onChange={(e) => addText(e.target.value)}
-            placeholder="Hello!"
-          /> */}
             </div>
             <Button variant="contained" onClick={addMessage}>
               add Message
             </Button>
-            {/* <button className="button" onClick={addMessage}>
-          add Message
-        </button> */}
           </form>
         </div>
       </div>
-    </div>
   );
 }
