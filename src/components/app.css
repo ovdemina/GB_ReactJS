@@ -91,3 +91,14 @@
   font-size: 30px;
   font-weight: 600;
 }
+.count{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  font-size: 30px;
+}
+.countButton{
+  padding: 10px;
+  margin: 0 10px;
+  font-size: 30px;
+}
