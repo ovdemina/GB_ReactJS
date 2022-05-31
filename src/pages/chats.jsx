@@ -1,38 +1,26 @@
 import * as React from "react";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import { ChatBoard } from "../components/chatBoard";
 import "../components/app.css";
+import { useSelector } from "react-redux";
+import { chatsSelector } from "../redux/redusers/chatReducer/selectors";
+import { NavLink } from "react-router-dom";
 
 
 export function Chats() {
+  const chats = useSelector(chatsSelector);
   return (
     <div className='board'>
-      <div>
-    <List
-      sx={{ width: "100%", maxWidth: 500, bgcolor: "background.paper" }}
-      aria-label="contacts"
-    >
-      <ListItem disablePadding>
-        <ListItemButton>
-          <ListItemText inset primary="Ivan_Ivanov" />
-        </ListItemButton>
-      </ListItem>
-      <ListItem disablePadding>
-        <ListItemButton>
-          <ListItemText inset primary="Alexey_Demin" />
-        </ListItemButton>
-      </ListItem>
-      <ListItem disablePadding>
-        <ListItemButton>
-          <ListItemText inset primary="Anna_Kivina" />
-        </ListItemButton>
-      </ListItem>
-    </List>
-    </div>
-    <ChatBoard />
-    </div>
+        <div className='chatItem'>
+          {
+            chats.map((item) => (
+              <NavLink key = {item.id} to ={`/mess/${item.id}`}>
+                {item.name}
+              </NavLink>
+            ))
+          }
+        </div>
+    
+
+     </div>
   );
 }
+     

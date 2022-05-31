@@ -48,13 +48,11 @@
   color: #b4644d;
 }
 .button{
-  padding: 20px 60px;
+  padding: 10px ;
   color: #b88c81;
   font-size: 20px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   background-color: #a5b8e7;
-  border: 2px solid #b4644d;
-  border-radius: 20px;
+  border: 1px solid #b4644d;
 }
 .label{
   display: block;
@@ -65,10 +63,9 @@
 .input{
   padding: 10px;
   margin-left: 20px;
-  border: 2px solid #b4644d;
-  border-radius: 20px;
-  font-size: 25px;
-  vertical-align: middle;
+  font-size: 20px;
+  
+  border: 1px solid #b4644d;
 }
 .inputAuthor{
   width: 25%;
@@ -91,14 +88,17 @@
   font-size: 30px;
   font-weight: 600;
 }
-.count{
+.chatItem{
   display: flex;
-  justify-content: center;
-  margin: 30px;
-  font-size: 30px;
+  flex-direction: column;
+  margin: 10px;
+  font-size: 20px;
+  text-align: left;
 }
-.countButton{
-  padding: 10px;
-  margin: 0 10px;
-  font-size: 30px;
+.item{
+  display: flex;
+  padding-left: 15px;
+}
+.mess{
+  padding: 15px;
 }
