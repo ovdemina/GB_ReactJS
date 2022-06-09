@@ -1,12 +1,34 @@
 import { combineReducers, createStore } from "redux";
 import { messReducer } from "./redusers/messReducer/messReducer";
 import { chatReducer } from "./redusers/chatReducer/chatsReducer";
-import { composeWithDevTools } from "@redux-devtools/extension";
+import storage from "redux-persist/lib/storage";
+import { persistReducer, persistStore } from "redux-persist";
+import { applyMiddleware } from "redux";
 
-export const store = createStore(
-  combineReducers({
-    mess: messReducer,
-    chats: chatReducer,
-  }),
-  composeWithDevTools()
-);
+const time = (store) => (next) => (action) => {
+  const delay = action?.meta?.delay;
+  if (!delay) {
+    return next(action);
+  }
+
+  const timeOut = setTimeout(() => next(action), delay);
+
+  return () => {
+    clearTimeout(timeOut);
+  };
+};
+
+const persistConfig = {
+  key: "root",
+  storage,
+};
+
+const rootReducer = combineReducers({
+  mess: messReducer,
+  chats: chatReducer,
+});
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+export const store = createStore(persistedReducer, applyMiddleware(time));
+export const persist = persistStore(store);
