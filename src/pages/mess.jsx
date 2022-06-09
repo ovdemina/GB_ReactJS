@@ -28,7 +28,7 @@ const addMess = () => {
 }
 
   const deleteMess = (id) => {
-    dispatch({type: DELETE_MESS, payload: id})
+    dispatch({type: DELETE_MESS, payload: id, meta: { delay: 4000}})
   } 
 
 
