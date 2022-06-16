@@ -3,7 +3,7 @@ import {
   loadUserAction,
   loadingAction,
 } from "../../actions/actions";
-import { ERROR, LOADING, LOAD_USERS } from "../../actions/actionTypes";
+import { LOADING, LOAD_USERS, ERROR } from "../../actions/actionTypes";
 
 const initialState = {
   users: [],

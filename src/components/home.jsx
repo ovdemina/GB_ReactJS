@@ -5,12 +5,14 @@ import { CustomLink } from "./CustomLink";
 import { Message } from "./message";
 
 export function Home() {
+
   return (
     <div className="app">
         <header className="app-header">
             <div className="title">Reactboard Messenger</div>
             <Message mes="Welcome to the new messenger!" />
         </header>
+
         <nav className="home">     
             <CustomLink to='/profile'> 
                 Profile
@@ -18,7 +20,11 @@ export function Home() {
             <CustomLink to='/chats'>
                 Chats
             </CustomLink>
+            <CustomLink to='/'>
+                Register
+            </CustomLink>
         </nav>
+
         <main>
             <Outlet />
         </main>

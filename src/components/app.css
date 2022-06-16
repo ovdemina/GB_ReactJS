@@ -53,6 +53,9 @@
   font-size: 20px;
   background-color: #a5b8e7;
   border: 1px solid #b4644d;
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
 }
 .label{
   display: block;
@@ -64,7 +67,6 @@
   padding: 10px;
   margin-left: 20px;
   font-size: 20px;
-  
   border: 1px solid #b4644d;
 }
 .inputAuthor{
@@ -104,4 +106,15 @@
 }
 .otstup{
   margin: 20px;
+}
+.register{
+  margin-top: 40px;
+  font-size: 30px;
+  text-decoration: none; 
+  color: #b4644d;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+.otstup{
+  margin-left: 20px;
 }
